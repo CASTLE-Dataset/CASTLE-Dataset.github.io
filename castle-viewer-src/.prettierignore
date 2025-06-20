@@ -1,0 +1,16 @@
+# directories
+node_modules/
+dist/
+build/
+coverage/
+logs/
+
+# secrets
+.env
+
+# logs
+*-error.log
+
+# misc
+.eslintcache
+pnpm-lock.yaml
