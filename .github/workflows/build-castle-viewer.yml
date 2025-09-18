@@ -8,6 +8,9 @@ on:
 jobs:
   build-and-commit:
     runs-on: ubuntu-latest
+    permissions:                # Job-level permissions configuration starts here
+      contents: write           # 'write' access to repository contents
+      pull-requests: write      # 'write' access to pull requests
 
     steps:
       - name: Checkout repo
@@ -38,3 +41,4 @@ jobs:
           git push origin HEAD:${{ github.ref }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
