@@ -32,3 +32,4 @@ dist/
 
 # castle-viewer build
 /castle-viewer/
+segments/

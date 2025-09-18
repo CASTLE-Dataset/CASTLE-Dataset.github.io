@@ -8,7 +8,7 @@ export default function VideoSchedule() {
     )
 
     return (
-        <div className="space-y-4 p-4">
+        <div className="space-y-4 p-4" style={{ maxWidth: '100dvw' }}>
             <div className="flex space-y-2">
                 <button
                     onClick={() => setSelectedView('individual')}

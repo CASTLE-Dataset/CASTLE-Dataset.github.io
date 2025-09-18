@@ -4,6 +4,7 @@ import Youtube from 'react-youtube'
 import { VideoEntry } from 'types'
 import videoData from './videos.json' // Ensure this file is in the same directory
 import { linkToId } from 'utils'
+import Segments from 'Segments'
 
 const Timeline = ({
     playerRef,
@@ -187,8 +188,9 @@ export default function IndividualView() {
                 />
                 {filteredVideos.length > 0 && video && (
                     <Youtube
+                        id="youtube-player"
                         videoId={linkToId(video.Link)}
-                        onReady={(event) => {
+                        onReady={(event: any) => {
                             console.log('Video ready:', video.Link)
                             playerRef.current = event.target
                         }}
@@ -207,6 +209,11 @@ export default function IndividualView() {
                         }}
                     />
                 )}
+                <Segments
+                    day={`day${selectedDay}`}
+                    person={selectedPerson.replace(' ', '_')}
+                    currentHour={currentHour + startHour}
+                />
             </div>
         </>
     )
