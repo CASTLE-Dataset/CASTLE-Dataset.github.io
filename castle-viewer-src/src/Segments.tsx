@@ -4,7 +4,8 @@ import { Segment } from 'types'
 import { loadSegments } from 'utils'
 
 const formatTime = (hour: number, seconds: number): string => {
-    return `${String(hour).padStart(2, '0')}:${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`
+    const hourSeconds = seconds - hour * 3600
+    return `${String(hour).padStart(2, '0')}:${String(Math.floor(hourSeconds / 60)).padStart(2, '0')}:${String(hourSeconds % 60).padStart(2, '0')}`
 }
 
 const CATEGORIES: Record<string, string> = {
@@ -85,8 +86,8 @@ function Segments({
     const currentActivities = segments.filter(
         (seg) =>
             parseInt(seg.hour) === currentHour &&
-            currentVideoTime >= seg.start_time &&
-            currentVideoTime < seg.end_time
+            currentVideoTime + currentHour * 3600 >= seg.start_seconds &&
+            currentVideoTime + currentHour * 3600 <= seg.end_seconds
     )
     const seg = currentActivities[0] || {
         description: 'None',
@@ -110,8 +111,8 @@ function Segments({
             >
                 <p>
                     {seg.description} (
-                    {formatTime(parseInt(seg.hour), seg.start_time)} -{' '}
-                    {formatTime(parseInt(seg.hour), seg.end_time)})
+                    {formatTime(parseInt(seg.hour), seg.start_seconds)} -{' '}
+                    {formatTime(parseInt(seg.hour), seg.end_seconds)})
                 </p>
             </div>
             {/*Legend*/}
