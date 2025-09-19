@@ -41,6 +41,9 @@ const CATEGORIES: Record<string, string> = {
     Walking: '#16a085',
     Sitting: '#7f8c8d',
     Driving: '#95a5a6',
+
+    Unclear: '#34495e',
+    'No Activity': '#000',
 }
 
 function Segments({
@@ -159,28 +162,27 @@ const SegmentTimeline = ({
 
                 // segments that overlap this hour
                 const hourSegments = segments.filter(
-                    (seg) => seg.hour === hour.toString()
+                    (seg) =>
+                        seg.start_seconds / 3600 === hour ||
+                        seg.end_seconds / 3600 === hour ||
+                        (seg.start_seconds / 3600 <= hour &&
+                            seg.end_seconds / 3600 >= hour) ||
+                        parseInt(seg.hour) === hour
                 )
 
                 return (
                     <div key={hour}>
                         <div
                             className="relative flex"
-                            style={{ overflow: 'scroll', gap: 0 }}
+                            style={{ overflow: 'scroll', gap: 0, width: '100dvw' }}
                         >
                             <span style={{ width: 56, flexShrink: 0 }}>
                                 {hour}:00
                             </span>
 
                             {hourSegments.map((seg, j) => {
-                                const left = Math.max(
-                                    0,
-                                    (seg.start_time / 3600) * 90
-                                )
-                                const right = Math.min(
-                                    100,
-                                    (seg.end_time / 3600) * 90
-                                )
+                                const left = Math.max(0, seg.start_seconds - hour * 3600) / 3600 * 95
+                                const right = Math.min(3600, seg.end_seconds - hour * 3600) / 3600 * 95
                                 const width = right - left
 
                                 return (

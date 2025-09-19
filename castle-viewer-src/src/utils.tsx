@@ -18,7 +18,7 @@ export const gridCols = (windowWidth: number): number => {
 
 export async function loadSegments(day: string, person: string) {
     return new Promise((resolve, reject) => {
-        const filePath = `http://localhost:9000/segments/${day}/${person}_segments.csv`
+        const filePath = `http://localhost:9000/segments/${day}/${person}_timeline.csv`
         console.log('Loading segments from:', filePath)
 
         try {
