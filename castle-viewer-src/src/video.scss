@@ -1,5 +1,5 @@
 @use "sass:math";
-@import "index.scss";
+@use "index.scss" as *;
 
 $video-width: 240px;
 

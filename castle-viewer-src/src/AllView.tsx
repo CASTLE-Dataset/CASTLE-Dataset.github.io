@@ -119,6 +119,8 @@ const AllView = () => {
     }, [selectedDay])
 
     const [paused, setPaused] = useState(true)
+    const [muted, setMuted] = useState(true)
+
     const togglePause = () => {
         setPaused(!paused)
         if (paused) {
@@ -147,6 +149,19 @@ const AllView = () => {
             if (player) {
                 player.seekTo(currentVideoTime, true)
                 player.playVideo()
+            }
+        })
+    }
+
+    const toggleMute = () => {
+        setMuted(!muted)
+        playerRefs.current.forEach((player) => {
+            if (player) {
+                if (muted) {
+                    player.unMute()
+                } else {
+                    player.mute()
+                }
             }
         })
     }
@@ -310,22 +325,49 @@ const AllView = () => {
                 onSliderClick={onSliderClick}
                 videoMatrix={videoMatrix}
             />
-            <button
-                className={paused ? 'play-button' : 'play-button outline'}
-                onClick={togglePause}
+            <div
+                style={{
+                    display: 'flex',
+                    gap: '16px',
+                    alignItems: 'center',
+                    marginBottom: '32px',
+                    width: 'fit-content',
+                    margin: 'auto',
+                }}
             >
-                {paused ? (
-                    <>
-                        <span className="material-icons">play_circle</span>
-                        <span>Play</span>
-                    </>
-                ) : (
-                    <>
-                        <span className="material-icons">pause</span>
-                        <span>Pause</span>
-                    </>
-                )}
-            </button>
+                <button
+                    className={paused ? 'play-button' : 'play-button outline'}
+                    onClick={togglePause}
+                >
+                    {paused ? (
+                        <>
+                            <span className="material-icons">play_circle</span>
+                            <span>Play</span>
+                        </>
+                    ) : (
+                        <>
+                            <span className="material-icons">pause</span>
+                            <span>Pause</span>
+                        </>
+                    )}
+                </button>
+                <button
+                    className={muted ? 'play-button outline' : 'play-button'}
+                    onClick={toggleMute}
+                >
+                    {muted ? (
+                        <>
+                            <span className="material-icons">volume_off</span>
+                            <span>Unmute All</span>
+                        </>
+                    ) : (
+                        <>
+                            <span className="material-icons">volume_up</span>
+                            <span>Mute All</span>
+                        </>
+                    )}
+                </button>
+            </div>
             <div
                 className="video-grid"
                 style={{
@@ -347,6 +389,7 @@ const AllView = () => {
                                 }}
                                 onEnd={onEnd}
                                 name={stream}
+                                muted={muted}
                             />
                         )
                 )}
@@ -361,17 +404,40 @@ const VideoWithLoader = ({
     onEnd,
     name,
     videoWidth = 200,
+    muted = true,
 }: {
     videoLink?: string
     onReady: (event: any) => void
     onEnd?: () => void
     name: string
     videoWidth?: number
+    muted?: boolean
 }) => {
     const [isLoading, setIsLoading] = useState(true)
+    const [localMute, setLocalMute] = useState(muted)
+    const ref = useRef<any>(null)
+
     useEffect(() => {
         setIsLoading(true)
     }, [videoLink])
+
+    useEffect(() => {
+        setLocalMute(muted)
+    }, [muted])
+
+    const toogleLocalMute = () => {
+        setLocalMute(!localMute)
+    }
+
+    useEffect(() => {
+        if (ref.current) {
+            if (localMute) {
+                ref.current.mute()
+            } else {
+                ref.current.unMute()
+            }
+        }
+    }, [localMute])
 
     return (
         <div className="video-wrapper">
@@ -387,6 +453,17 @@ const VideoWithLoader = ({
                 }}
             >
                 {name} {videoLink ? '' : '(N/A)'}
+                <button
+                    onClick={toogleLocalMute}
+                    className="mute-button outline"
+                    style={{ display: 'inline-block', border: 'none', transform: 'translateY(4px)' }}
+                >
+                    {localMute ? (
+                        <span className="material-icons">volume_off</span>
+                    ) : (
+                        <span className="material-icons">volume_up</span>
+                    )}
+                </button>
             </p>
             {videoLink ? (
                 <div className="video-container" style={{ width: videoWidth }}>
@@ -410,10 +487,16 @@ const VideoWithLoader = ({
                                 showinfo: 0,
                             },
                         }}
-                        onReady={(event) => {
+                        onReady={(event: any) => {
                             setIsLoading(false)
                             onReady(event)
                             event.target.pauseVideo()
+                            ref.current = event.target
+                            if (localMute) {
+                                event.target.mute()
+                            } else {
+                                event.target.unMute()
+                            }
                         }}
                         onEnd={onEnd}
                     />
