@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CASTLE Challenges</title>
+        <link rel="stylesheet" href="../styles.css">
+
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <h1>CASTLE Dataset</h1>
+                <p>Advancing the state of the art in multimodal understanding</p>
+            </div>
+        </header>
+
+
+        <main>
+            <div class="container">
+
+                <!-- Challenges Section -->
+                <section id="challenges">
+                    <h2>1st CASTLE Challenge at ACM Multimedia 2025</h2>
+
+                    <p>The first CASTLE multimodal analytics challenge will be held at <a href="https://acmmm2025.org/" target="_blank">ACM Multimedia 2025</a> in Dublin, Ireland.</p>
+                    <p>To express your interest in participating to the challenge, please fill <a href="https://forms.gle/aDN64ZPY5Vhn2RxT6" target="_blank">this form</a>.</p>
+                    <p>To submit your paper and your results (for participants of the automatic track), please use <a href="https://openreview.net/group?id=acmmm.org/ACMMM/2025/Workshop/CASTLE" target="_blank">submission form on OpenReview</a>.</p>
+
+                    <h3>News</h3>
+                    <p>The overview paper of the first CASTLE Grand Challenge at ACM Multimedia 2025 has been published in the proceedings of ACM Multimedia 2025: <a href="https://doi.org/10.1145/3746027.3760242" target="_blank">Overview of the First CASTLE Grand Challenge at ACM Multimedia 2025</a>.</p>
+                    <p>Congratulations to the <a href="https://doi.org/10.1145/3746027.3760243" target="_blank">multiXview team</a> multiXview team for winning the interactive track!</p>
+
+                    <h3>Timeline</h3>
+                    <ul>
+                        <li><strong>09 March 2025:</strong> Challenge Announcement & Website Launch</li>
+                        <li><strong>09 March 2025:</strong> Registration Opens</li>
+                        <li><strong>24 March 2025:</strong> Dataset & Query Release</li>
+                        <li><strong>27 July 2025:</strong> Fully-Automated Submission & Paper Deadline</li>
+                        <li><strong>11 August 2025:</strong> Notification to Authors</li>
+                        <li><strong>26 August 2025:</strong> Camera-Ready Deadline</li>
+                    </ul>
+
+                    <h3>Guidelines for Participants</h3>
+                    <p>Participants will be required to register and agree to the dataset usage policy. For details on the submission format, please see below.</p>
+
+                    <h3>Tasks</h3>
+                    <p>
+                        The inaugural edition of the CASTLE Challenge features a diverse set of tasks, including event detection, retrieval, and question answering. Future editions will expand the scope, but for this edition, the tasks include:
+                    </p>
+
+
+                    <div class="task-list">
+                        <h5>🔍 Event Instance Search</h5>
+                        <p>
+                            Given a textual description (in English), participants must identify all timeframes where a specific event occurs.
+                            Events should be reported with both a <strong>time range</strong> and a <strong>video ID</strong>.
+                        </p>
+
+                        <h5>📦 Object Instance Search</h5>
+                        <p>
+                            Given a textual (in English) or visual (i.e., using an image) example of a physical object, participants must find all occurrences of that object across any of the video streams.
+                        </p>
+
+                        <h5>💬 Question Answering</h5>
+                        <p>
+                            Given a question in natural language (in English), participants must provide an answer. The response should be formulated in natural language and include references to relevant <strong>sensor streams</strong> and <strong>time intervals</strong> as supporting evidence.
+                        </p>
+                    </div>
+                    <!-- Evaluation Section -->
+                        <h3>Evaluation</h3>
+                        <p>
+                            The challenge will operate across two tracks: <strong>fully-automatic</strong> and <strong>interactive</strong>.
+                        </p>
+                        <div class="evaluation-track">
+                            <h5>⚙️ Fully-Automatic Track</h5>
+                            <p>
+                                Participants receive queries in advance and generate results using any method they choose. These results are then submitted to the challenge organizers for evaluation. Please see the list of queries below.
+                            </p>
+                        </div>
+                        <div class="evaluation-track">
+                            <h5>🎮 Interactive Track</h5>
+                            <p>
+                                This track will be evaluated live during the conference. Participants must solve tasks <strong>synchronously</strong> and <strong>interactively</strong> within a limited timeframe. This format follows established competitions such as the <em>Video Browser Showdown</em> and the <em>Lifelog Search Challenge</em>.
+                            </p>
+                        </div>
+
+                        <h3>Queries</h3>
+
+                        <h5>🔍 Event Instance Search</h5>
+
+                        <ul>
+                            <li> MM25-EIS01: Find instances of somebody using a portable electric kitchen gadget. </li>
+                            <li> MM25-EIS02: Find instances of somebody unwrapping a sweet snack and eating it. </li>
+                            <li> MM25-EIS03: Find instances of somebody telling a joke or making a pun. </li>
+                            <li> MM25-EIS04: Find winning hands of poker. </li>
+                            <li> MM25-EIS05: Find instances pouring the last amount of liquid from a beverage container. </li>
+                            <li> MM25-EIS06: Find instances of somebody complimenting the food. </li>
+                            <li> MM25-EIS07: Find instances of people mispronouncing the German name of a food item. </li>
+                            <li> MM25-EIS08: Find instances of people singing. </li>
+                            <li> MM25-EIS09: Find instances of starting the dishwasher. </li>
+                            <li> MM25-EIS10: Find instances of someone using the pepper shaker that actually contains salt. </li>
+                        </ul>
+
+                        <h5>📦 Object Instance Search</h5>
+
+                        <ul>
+                            <li> MM25-OIS01: Find the bird-shaped cookie cutter. </li>
+                            <li> MM25-OIS02: Find the thermal image camera. </li>
+                            <li> MM25-OIS03: Find the ace of spades. </li>
+                            <li> MM25-OIS04: Find 'A Christmas Carol' (the book). </li>
+                            <li> MM25-OIS05: Find the set of colored pens. </li>
+                            <li> MM25-OIS06: Find a paper airplane made from a white sheet of paper. </li>
+                            <li> MM25-OIS07: Find a partially eaten apple. </li>
+                            <li> MM25-OIS08: Find the yellow octopus toy. </li>
+                            <li> MM25-OIS09: Find the squirrel-shaped tree onrnament. </li>
+                            <li> MM25-OIS10: Find a kitchen scale. </li>
+                        </ul>
+
+                        <h5>💬 Question Answering</h5>
+
+                        <ul>
+                            <li> MM25-QA01: How many ‘Zimtstern’ cookies were made in total? </li>
+                            <li> MM25-QA02: Who drew a picture of a ‘Connect Four’ board? </li>
+                            <li> MM25-QA03: What was the category in the first round of ‘Happy Quiz’? </li>
+                            <li> MM25-QA04: Who won at Mikado? </li>
+                            <li> MM25-QA05: What was the ingredient not available (i.e. also not replaced) for the pumpkin risotto? </li>
+                            <li> MM25-QA06: What open-source movie did Klaus want to watch? </li>
+                            <li> MM25-QA07: What K-pop band is Cathal into? </li>
+                            <li> MM25-QA08: Whom did Werner give a small bottle of hand sanitizer? </li>
+                            <li> MM25-QA09: Which was the name or brand of the wine, of which the empty bottle was used as a rolling pin? </li>
+                            <li> MM25-QA10: What book did Florian spend the longest time reading? </li>
+                        </ul>
+
+
+
+
+                <h3>Submission Format</h3>
+
+                <h4>⚙️ Fully-Automatic Track</h4>
+                    <p>
+                        For the fully-automatic track, please submit your results together with your paper on <a href="https://openreview.net/group?id=acmmm.org/ACMMM/2025/Workshop/CASTLE" target="_blank">OpenReview</a>. Results should be submitted in CSV format with one file per task type (i.e., three files, one each for the 🔍 Event Instance Search, 📦 Object Instance Search, and 💬 Question Answering tasks) in a ZIP file. The name of each file should indicate the task type. The columns for the files are listed below.
+                    </p>
+
+                    <h5>🔍 Event Instance Search</h5>
+
+                        <ul>
+                            <li>task: the Id of the task</li>
+                            <li>day: the day on which the event occured as integer from 1 to 4</li>
+                            <li>starttime: the start time of the event in HH:MM:SS format</li>
+                            <li>endtime: the end time of the event in HH:MM:SS format</li>
+                            <li>source: the perspective/camera the event was recorded from (e.g., Allie, Kitchen, etc.)</li>
+                        </ul>
+
+                    <h5>📦 Object Instance Searchh</h5>
+
+                        <ul>
+                            <li>task: the Id of the task</li>
+                            <li>day: the day on which the object can be seen as integer from 1 to 4</li>
+                            <li>starttime: the start time from when the object can be seen in HH:MM:SS format</li>
+                            <li>endtime: the end time until when the object can be seen in HH:MM:SS format</li>
+                            <li>source: the perspective/camera the object can be seen from (e.g., Allie, Kitchen, etc.)</li>
+                        </ul>
+
+                    <h5>💬 Question Answering</h5>
+
+                        <ul>
+                            <li>task: the Id of the task</li>
+                            <li>answer: a natural language answer to the question in English</li>
+                        </ul>
+
+                    <h4>🎮 Interactive Track</h4>
+                    <p>
+                        The interactive track will be evaluated during a dedicated session at ACM Multimedia 2025 in Dublin. Participants are expected to be on-site for the interactive evaluation. Systems are supposed to submit their task solutions to the <a href="https://dres.dev" target="_blank">Distributed Retrieval Evaluation Server</a> via it's API.
+                    </p>
+
+                    </section>
+
+
+            </div>
+        </main>
+        <footer>
+            <div class="container">
+                <p>&copy; 2025 CASTLE Challenge. All rights reserved.</p>
+            </div>
+        </footer>
+    </body>
+
