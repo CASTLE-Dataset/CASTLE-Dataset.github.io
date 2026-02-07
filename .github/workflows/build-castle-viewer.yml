@@ -42,7 +42,7 @@ jobs:
         run: |
           rm -rf site/static/castle-viewer
           mkdir -p site/static/castle-viewer
-          cp -r apps/castle-viewer/dist/* site/static/castle-viewer/
+          cp -r apps/castle-viewer/* site/static/castle-viewer/
 
       # -----------------------------
       # Build Zola site
