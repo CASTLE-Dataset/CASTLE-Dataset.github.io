@@ -1,0 +1,51 @@
+# The URL the site will be built for
+base_url = "https://castle-dataset.github.io/"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+theme = "duckquill"
+title = "Castle Dataset"
+description = "Advancing the state of the art in multimodal understanding"
+generate_feeds = true
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+[extra]
+# Put all your custom variables here
+accent_color = "#816bca"
+# Ditto but for the dark theme.
+# If not set regular variant will be used.
+# accent_color_dark = "#ffa348"
+styles = [
+  "custom.css",
+]
+favicon = "castle2024-favicon.png"
+show_backlinks = true
+show_share_button = true
+
+[extra.nav]
+# Whether to show the manual theme switcher in the nav
+show_theme_switcher = true
+# Whether to show the link to the source repository in the nav
+show_repo = true
+links = [
+	{ name = "Challenges", menu = [
+		{ url = "/challenges/", name = "All" },
+		{ url = "/challenges/mm25", name = "1st CASTLE Grand Challenge" },
+    { url = "/challenges/mm26", name = "2nd CASTLE Grand Challenge" },
+    { url = "/challenges/cvpr26", name = "CVPR 2026 CASTLE Challenge" },
+	] },
+  { name = "Dataset Viewer", url = "/castle-viewer/" },
+  { name = "Contact", url = "/contact/" },
+]
+
+[extra.footer]
+# Whether to show "© Title, YEAR"
+show_copyright = true
