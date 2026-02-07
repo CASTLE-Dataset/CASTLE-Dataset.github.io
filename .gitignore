@@ -2,4 +2,4 @@
 site/public/
 
 # Vite
-apps/castle-viewer/dist/
+apps/castle-viewer/

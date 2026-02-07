@@ -35,7 +35,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build Castle Viewer
-        working-directory: apps/castle-viewer
+        working-directory: apps/castle-viewer-src
         run: yarn build
 
       - name: Copy Castle Viewer into Zola static directory
