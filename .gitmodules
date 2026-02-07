@@ -1,0 +1,6 @@
+[submodule "zola/templates/duckquill"]
+	path = zola/templates/duckquill
+	url = https://codeberg.org/daudix/duckquill.git
+[submodule "zola/themes/duckquill"]
+	path = zola/themes/duckquill
+	url = https://codeberg.org/daudix/duckquill.git

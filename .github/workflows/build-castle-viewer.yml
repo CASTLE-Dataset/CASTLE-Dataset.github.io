@@ -1,44 +1,66 @@
-name: Build Castle Viewer
+name: Build and Deploy Site (Zola + Castle Viewer)
 
 on:
   push:
     branches:
-      - main  # or your default branch
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
-  build-and-commit:
+  build:
     runs-on: ubuntu-latest
-    permissions:                # Job-level permissions configuration starts here
-      contents: write           # 'write' access to repository contents
-      pull-requests: write      # 'write' access to pull requests
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-        with:
-          persist-credentials: false  # we'll use a token
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
+      # -----------------------------
+      # Build Castle Viewer (Vite)
+      # -----------------------------
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '20.19.0'
+          node-version: 20
 
-      - name: Install dependencies
-        working-directory: castle-viewer-src
-        run: yarn install
+      - name: Install Castle Viewer dependencies
+        working-directory: apps/castle-viewer
+        run: yarn install --frozen-lockfile
 
-      - name: Build Vite app
-        working-directory: castle-viewer-src
+      - name: Build Castle Viewer
+        working-directory: apps/castle-viewer
         run: yarn build
 
-      - name: Commit and push changes
+      - name: Copy Castle Viewer into Zola static directory
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add castle-viewer/
-          git commit -m "Build castle-viewer [skip ci]" || echo "No changes to commit"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git push origin HEAD:${{ github.ref }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          rm -rf site/static/castle-viewer
+          mkdir -p site/static/castle-viewer
+          cp -r apps/castle-viewer/dist/* site/static/castle-viewer/
 
+      # -----------------------------
+      # Build Zola site
+      # -----------------------------
+      - name: Build Zola site
+        uses: getzola/github-pages@066755243e69f508fd1a74739fbf1a65f656c790
+        with:
+          zola_version: v0.20.0
+          working_directory: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

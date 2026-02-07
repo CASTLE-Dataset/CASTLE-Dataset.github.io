@@ -1,0 +1,63 @@
+@use "sass:math";
+@use "index.scss" as *;
+
+$video-width: 240px;
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($video-width, 1fr));
+    gap: 2px;
+}
+
+.video-name {
+    font-weight: bold;
+    margin: 0;
+    width: $video-width;
+}
+
+.video-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-container {
+    position: relative;
+    width: $video-width;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    overflow: hidden;
+
+    img {
+        width: $video-width;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+}
+
+.video-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $comment-color;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+
+    &.loaded {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    span {
+        color: $foreground-color;
+    }
+}
+

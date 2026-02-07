@@ -1,0 +1,5 @@
+# Zola
+site/public/
+
+# Vite
+apps/castle-viewer/dist/
