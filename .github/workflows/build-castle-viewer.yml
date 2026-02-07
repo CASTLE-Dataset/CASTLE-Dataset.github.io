@@ -31,7 +31,7 @@ jobs:
           node-version: '20.19.0'
 
       - name: Install Castle Viewer dependencies
-        working-directory: apps/castle-viewer
+        working-directory: apps/castle-viewer-src
         run: yarn install --frozen-lockfile
 
       - name: Build Castle Viewer
