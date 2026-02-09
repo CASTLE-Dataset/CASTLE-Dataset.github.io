@@ -14,7 +14,7 @@ To view the dataset in more detail, please use the [CASTLE Viewer](https://www.g
 
 <div>
 
-### What is CASTLE?
+## What is CASTLE?
 
 The CASTLE dataset is a large-scale, multimodal dataset designed for advancing research in lifelogging, human activity recognition, and multimodal retrieval. It provides a rich collection of time-aligned sensor and video data for analysis and benchmarking. See the [Paper](https://doi.org/10.1145/3746027.3758199) (or its [arXiv pre-print](https://arxiv.org/abs/2503.17116)) for more details.
 
@@ -23,7 +23,7 @@ The CASTLE dataset is a large-scale, multimodal dataset designed for advancing r
 
 ---
 
-### Characteristics
+## Characteristics
 
 * Captured over **four days** in a controlled environment
 * **10 participants** engaged in natural activities
@@ -36,13 +36,13 @@ The CASTLE dataset is a large-scale, multimodal dataset designed for advancing r
 
 ---
 
-## Download
+# Download
 
-### License
+## License
 
 The CASTLE dataset is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 
-### Terms of Use
+## Terms of Use
 
 By downloading the dataset, you agree to the following terms:
 
@@ -59,7 +59,7 @@ The dataset is available for download from
 
 ---
 
-## Challenges
+# Challenges
 We are organizing a series of challenges to encourage the research community to explore and utilize the CASTLE dataset.
 
 To see the list of challenges and their details, please visit the [Challenges](./challenges) page.

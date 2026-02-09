@@ -5,6 +5,8 @@ weight = 3
 featured = true
 +++
 
+---
+
 # 1st Asynchronous CASTLE Challenge at the Joint Egocentric Vision Workshop in Conjunction with CVPR 2026
 
 We will hold a pilot task at the [3rd Joint Egocentric Vision Workshop (EgoVis)](https://egovis.github.io/cvpr25/) held in conjunction with [CVPR 2026](https://cvpr.thecvf.com/Conferences/2026) in June 2026 in Denver, Colorado, USA. The challenge builds upon prior challenges at EgoVis, as well as [IViSE](https://sites.google.com/view/ivise2025) and [the 1st CASTLE Grand Challenge at ACM Multimedia 2025](../challenges/mm25).
