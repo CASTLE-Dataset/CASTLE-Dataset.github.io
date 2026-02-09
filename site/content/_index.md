@@ -3,7 +3,7 @@ title: "Home"
 ---
 
 
-{{ video(url="vid/5x3_3min_1080.webm", alt="CASTLE preview", controls=false) }}
+{{ video(url="vid/5x3_3min_1080.webm", alt="CASTLE preview", controls=false, autoplay=true) }}
 To view the dataset in more detail, please use the [CASTLE Viewer](https://www.google.com/search?q=castle-viewer/index.html). More features will be added to the viewer in the future.
 
 ---
