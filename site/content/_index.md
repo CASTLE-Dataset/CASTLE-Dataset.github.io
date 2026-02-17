@@ -61,20 +61,20 @@ If you are using the dataset in your research, please consider citing the follow
 
 ```bibtex
 @inproceedings{10.1145/3746027.3758199,
-author = {Rossetto, Luca and Bailer, Werner and Dang-Nguyen, Duc-Tien and Healy, Graham and J\'{o}nsson, Bj\"{o}rn \TH{}\'{o}r and Kongmeesub, Onanong and Le, Hoang-Bao and Rudinac, Stevan and Sch\"{o}ffmann, Klaus and Spiess, Florian and Tran, Allie and Tran, Minh-Triet and Tran, Quang-Linh and Gurrin, Cathal},
-title = {The CASTLE 2024 Dataset: Advancing the Art of Multimodal Understanding},
-year = {2025},
-isbn = {9798400720352},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
-url = {https://doi.org/10.1145/3746027.3758199},
-doi = {10.1145/3746027.3758199},
-booktitle = {Proceedings of the 33rd ACM International Conference on Multimedia},
-pages = {12629–12635},
-numpages = {7},
-keywords = {dataset, egocentric vision, lifelogging, multi-perspective video, multimodal understanding},
-location = {Dublin, Ireland},
-series = {MM '25}
+    author = {Rossetto, Luca and Bailer, Werner and Dang-Nguyen, Duc-Tien and Healy, Graham and J\'{o}nsson, Bj\"{o}rn \TH{}\'{o}r and Kongmeesub, Onanong and Le, Hoang-Bao and Rudinac, Stevan and Sch\"{o}ffmann, Klaus and Spiess, Florian and Tran, Allie and Tran, Minh-Triet and Tran, Quang-Linh and Gurrin, Cathal},
+    title = {The CASTLE 2024 Dataset: Advancing the Art of Multimodal Understanding},
+    year = {2025},
+    isbn = {9798400720352},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3746027.3758199},
+    doi = {10.1145/3746027.3758199},
+    booktitle = {Proceedings of the 33rd ACM International Conference on Multimedia},
+    pages = {12629–12635},
+    numpages = {7},
+    keywords = {dataset, egocentric vision, lifelogging, multi-perspective video, multimodal understanding},
+    location = {Dublin, Ireland},
+    series = {MM '25}
 }
 ```
 
