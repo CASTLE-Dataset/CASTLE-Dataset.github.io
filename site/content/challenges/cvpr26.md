@@ -6,6 +6,11 @@ featured = true
 +++
 
 ---
+{% alert(important=true) %}
+The questions are available now! You can download the JSON file [here](/EgoVis2026_CVPR_Questions.json).
+
+Submissions can be made via [Codabench](https://www.codabench.org/competitions/13742/).
+{% end %}
 
 # 1st Asynchronous CASTLE Challenge at the Joint Egocentric Vision Workshop in Conjunction with CVPR 2026
 
@@ -36,7 +41,7 @@ This first task will focus on closed-form question answering. Given the entire d
       "c": "Third Answer Option",
       "d": "Fourth Answer Option"
     }
-  }, 
+  },
   "2026_q0002": {
     "query": "Another question formulated in English",
     "answers": {
@@ -45,10 +50,11 @@ This first task will focus on closed-form question answering. Given the entire d
       "c": "Third Answer Option",
       "d": "Fourth Answer Option"
     }
-  }, 
+  },
   ...
 }
 ```
+
 
 
 ## Submission Format
@@ -63,4 +69,4 @@ Submissions are expected as a single JSON file in the following format.
 }
 ```
 
-Submissions can be made via Codabench (link coming soon).
+Submissions can be made via [Codabench](https://www.codabench.org/competitions/13742/).
