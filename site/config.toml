@@ -36,6 +36,7 @@ show_theme_switcher = true
 # Whether to show the link to the source repository in the nav
 show_repo = true
 links = [
+	{ name = "Download", url = "https://huggingface.co/datasets/CASTLE-Dataset/CASTLE2024" },
 	{ name = "Challenges", menu = [
 		{ url = "/challenges/", name = "All" },
 		{ url = "/challenges/mm25", name = "1st CASTLE Grand Challenge" },
