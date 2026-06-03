@@ -6,15 +6,20 @@ featured = true
 +++
 
 ---
-{% alert(important=true) %}
-The questions are available now! You can download the JSON file [here](/EgoVis2026_CVPR_Questions.json).
 
-Submissions can be made via [Codabench](https://www.codabench.org/competitions/13742/).
-{% end %}
 
 # 1st Asynchronous CASTLE Challenge at the Joint Egocentric Vision Workshop in Conjunction with CVPR 2026
 
 We will hold a pilot task at the [3rd Joint Egocentric Vision Workshop (EgoVis)](https://egovis.github.io/cvpr26/) held in conjunction with [CVPR 2026](https://cvpr.thecvf.com/Conferences/2026) in June 2026 in Denver, Colorado, USA. The challenge builds upon prior challenges at EgoVis, as well as [IViSE](https://sites.google.com/view/ivise2025) and [the 1st CASTLE Grand Challenge at ACM Multimedia 2025](@/challenges/mm25.md)
+
+## Results
+
+The results of the challange are listed below. Congratulations to all the placed teams!
+
+* **1st Place:** [Team WDL](https://arxiv.org/abs/2606.00712) (108/185 Questions answered)
+* **2nd Place:** [MARS](https://arxiv.org/abs/2605.18176) (105/185 Questions answered)
+* **3rd Place:** [TAHAKOM](https://arxiv.org/abs/2606.01933) (101/185 Questions answered)
+* **4th Place:** [CuriousAI](https://arxiv.org/abs/2605.27800) (92/185 Questions answered)
 
 ## Timeline
 
